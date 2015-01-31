@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templateSet group="Zen XSL">
+  <template name="ch" value="&lt;xsl:choose&gt;$END$&lt;/xsl:choose&gt;" description="&lt;xsl:choose&gt;...&lt;/xsl:choose&gt;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+</templateSet>
+

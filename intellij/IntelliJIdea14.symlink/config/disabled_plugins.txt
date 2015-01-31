@@ -1,0 +1,14 @@
+Heroku
+TFS
+com.intellij.uiDesigner
+PerforceDirectPlugin
+ClearcasePlugin
+CloudFoundry
+org.jetbrains.android
+org.jetbrains.plugins.github
+hg4idea
+Subversion
+DevKit
+OpenShift
+CloudBees
+CVS

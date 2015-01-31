@@ -1,0 +1,24 @@
+<application>
+  <component name="CommunityFileTypes" version="11">
+    <ignoreFiles list="CVS;SCCS;RCS;rcs;.DS_Store;.svn;.pyc;.pyo;*.pyc;*.pyo;.git;*.hprof;_svn;.hg;*.lib;*~;__pycache__;.bundle;*.rbc;" />
+    <extensionMap>
+      <mapping ext="g" type="ANTLR v4 grammar file" />
+      <mapping ext="p12" type="PLAIN_TEXT" />
+      <mapping ext="clj" type="PLAIN_TEXT" />
+      <mapping ext="req" type="PLAIN_TEXT" />
+      <mapping ext="jspx" type="XML" />
+      <mapping ext="tagx" type="XML" />
+    </extensionMap>
+  </component>
+  <component name="FileTypeManager" version="11">
+    <ignoreFiles list="CVS;SCCS;RCS;rcs;.DS_Store;.svn;.pyc;.pyo;*.pyc;*.pyo;.git;*.hprof;_svn;.hg;*.lib;*~;__pycache__;.bundle;*.rbc;vssver.scc;vssver2.scc;" />
+    <extensionMap>
+      <mapping pattern="authorized_keys" type="PLAIN_TEXT" />
+      <mapping pattern="id_rsa" type="PLAIN_TEXT" />
+      <mapping ext="svg" type="PLAIN_TEXT" />
+      <mapping ext="base64" type="PLAIN_TEXT" />
+      <mapping ext="key" type="PLAIN_TEXT" />
+    </extensionMap>
+    <setting name="fileTypeChangedCounter" value="1" />
+  </component>
+</application>
