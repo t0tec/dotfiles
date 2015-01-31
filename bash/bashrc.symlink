@@ -80,6 +80,9 @@ alias exports="sudo vim /etc/exports"
 # GPU stuff:
 alias gl="glxinfo | grep -i opengl && glxgears"
 
+# CPU stuff
+alias clockspeed="watch grep \"cpu MHz\" /proc/cpuinfo"
+
 # Custom scripts:
 alias status_service="sh ~/.dotfiles/system/status_service.sh"
 
@@ -89,8 +92,7 @@ alias status_service="sh ~/.dotfiles/system/status_service.sh"
 
 # ex - archive extractor
 # usage: ex <file>
-ex ()
-{
+ex () {
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2)   tar xjf $1   ;;
@@ -113,39 +115,43 @@ ex ()
 
 # type "path" in terminal for ordered $PATH display
 function path(){
-    old=$IFS
-    IFS=:
-    printf "%s\n" $PATH
-    IFS=$old
+  old=$IFS
+  IFS=:
+  printf "%s\n" $PATH
+  IFS=$old
 }
 
 # add directory to $PATH if it's not already there
 pathadd() {
-    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-        PATH="${PATH:+"$PATH:"}$1"
-    fi
+  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="${PATH:+"$PATH:"}$1"
+  fi
 }
 
 # cd & ls in one
 cl() {
-if [ -d "$1" ]; then
-   cd "$1"
-   ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F   
-   else
-   echo "bash: cl: '$1': Directory not found"
-fi
+  if [ -d "$1" ]; then
+    cd "$1"
+    ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F   
+  else
+    echo "bash: cl: '$1': Directory not found"
+  fi
 }
 
 # cd and ls & more in one
 cm() {
-if [ -d "$1" ]; then
-   cd "$1"
-   ls | more
-   else
-   echo "bash: cl: '$1': Directory not found"
-fi
+  if [ -d "$1" ]; then
+    cd "$1"
+    ls | more
+  else
+    echo "bash: cl: '$1': Directory not found"
+  fi
 }
 
+# search history of typed commands
+hs() {
+  hist='fc -l 1 55000 | grep '
+}
 
 #-------------------------------
 # command prompt layout & other
@@ -156,12 +162,12 @@ PS1='[\u@\h \W]\$ ' # Default
 
 # colored man pages
 man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-    LESS_TERMCAP_me=$'\E[0m' \
-    LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\E[38;5;246m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-    man "$@"
+  env LESS_TERMCAP_mb=$'\E[01;31m' \
+  LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+  LESS_TERMCAP_me=$'\E[0m' \
+  LESS_TERMCAP_se=$'\E[0m' \
+  LESS_TERMCAP_so=$'\E[38;5;246m' \
+  LESS_TERMCAP_ue=$'\E[0m' \
+  LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+  man "$@"
 }
