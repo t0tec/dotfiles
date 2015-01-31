@@ -16,8 +16,8 @@
       <mapping pattern="authorized_keys" type="PLAIN_TEXT" />
       <mapping pattern="id_rsa" type="PLAIN_TEXT" />
       <mapping ext="svg" type="PLAIN_TEXT" />
-      <mapping ext="base64" type="PLAIN_TEXT" />
       <mapping ext="key" type="PLAIN_TEXT" />
+      <mapping ext="base64" type="PLAIN_TEXT" />
     </extensionMap>
     <setting name="fileTypeChangedCounter" value="1" />
   </component>
