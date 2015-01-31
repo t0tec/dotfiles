@@ -1,0 +1,26 @@
+# this is sourced on login shells
+# set/export main environment variables
+
+# java settings
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
+
+# maven settings
+if [ -r /opt/maven ]; then
+	export M2_HOME=/opt/maven
+fi
+
+# oracle server (11.2.0 g) settings
+if [ -r /usr/lib/oracle/product/11.2.0/ex ]; then
+	export ORACLE_HOME=/usr/lib/oracle/product/11.2.0/xe
+	export PATH=$ORACLE_HOME/bin:$PATH
+	export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
+fi
+
+# for dotfiles bin
+if [ -r ~/.dotfiles/bin ]; then
+	export PATH=$PATH:$HOME/.dotfiles/bin
+fi
+
+# source .bashrc last, so it  will be sourced on all login shells 
+[ -r ~/.bashrc ] && source ~/.bashrc
+

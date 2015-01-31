@@ -1,0 +1,170 @@
+# bash_completion can be used in sophisticated ways beyond my understanding
+# even though I've installed the external bash-completion package
+# the internal bash_completion should remain
+if [ -f /etc/bash_completion ]; then
+	    . /etc/bash_completion
+fi
+
+xhost +local:root > /dev/null 2>&1 # sudo & X magic 
+
+# sets bash completion
+complete -cf sudo
+
+shopt -s autocd		# automatically cd's to path entered at the prompt   
+shopt -s cdspell 	# corrects minor spelling errors in when using cd
+shopt -s checkwinsize 	# as the name says - after each bash command
+shopt -s cmdhist 	# attempts to save multiple line commands in the history
+shopt -s dotglob 	# includes <.dot> files in file name expansion if poss'
+shopt -s expand_aliases # aliases are expanded
+shopt -s extglob	# the extended pattern matching enabled
+shopt -s histappend 	# history from exited shell kept for next open shell 
+shopt -s hostcomplete 	# host name completion when @ is in the word
+shopt -s nocaseglob 	# case-insensitive when performing filename expansion
+
+export HISTSIZE=100000	# sets the size of the .bash_history file
+export HISTFILESIZE=${HISTSIZE}
+export HISTCONTROL=ignoreboth
+export EDITOR=/usr/bin/vim
+export PATH=$PATH
+export DISPLAY=:0.0
+
+# need this for keeping ssh/git working
+export $(gnome-keyring-daemon --daemonize --start)
+
+
+#-------------------------------
+# aliases
+#-------------------------------
+
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias grep='grep --color=tty -d skip'
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias freemem="free -m; sync; sudo bash -c 'echo 3 > /proc/sys/vm/drop_caches'; free -m"
+alias np='nano PKGBUILD'
+alias a="alsamixer"
+alias gparted="sudo gparted"
+alias grubup="sudo update-grub"
+alias src="source .bashrc"
+
+# package Management:
+alias pacup="sudo pacman -Syu"
+alias yup="yaourt -Syu --aur" 
+alias pacupsyn="sudo pacman -Syyu"
+alias pacupu="sudo pacman -Syuu"
+alias ydelete="yaourt -Rsn"
+# deletes all but the last 2 versions of installed packages in the pacman cache
+alias pcc="sudo pkgcacheclean 1"
+# creates a list of all installed packages:
+alias pkglist="comm -13 <(pacman -Qmq | sort) <(pacman -Qqe | sort) > pkglist"
+# runs the allservers.sh script, ranking mirrors & syncing databases
+# & bringing up a menu with options to upgrade system only or upgrade 
+# both system & AUR packages:
+alias as="sudo sh ~/.dotfiles/system/allserver.sh"
+
+# quick call for vim & major conf files:
+alias rc.conf="sudo vim /etc/rc.conf"
+alias pacman.conf="sudo vim /etc/pacman.conf"
+alias menu.lst="sudo vim /boot/grub/menu.lst"
+alias fstab="sudo vim /etc/fstab"
+alias bashrc="vim ~/.bashrc"
+alias rc.local="sudo vim /etc/rc.local"		# where I can call files during the boot process
+alias xinitrc="vim ~/.xinitrc"
+alias mkinit="sudo vim /etc/mkinitcpio.conf"
+alias inittab="sudo vim /etc/inittab"
+alias hosts="sudo vim /etc/hosts"
+alias hdeny="sudo vim /etc/hosts.deny"
+alias hallow="sudo vim /etc/hosts.allow"
+alias exports="sudo vim /etc/exports"
+
+# GPU stuff:
+alias gl="glxinfo | grep -i opengl && glxgears"
+
+# Custom scripts:
+alias status_service="sh ~/.dotfiles/system/status_service.sh"
+
+#-------------------------------
+# functions
+#-------------------------------
+
+# ex - archive extractor
+# usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# type "path" in terminal for ordered $PATH display
+function path(){
+    old=$IFS
+    IFS=:
+    printf "%s\n" $PATH
+    IFS=$old
+}
+
+# add directory to $PATH if it's not already there
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+# cd & ls in one
+cl() {
+if [ -d "$1" ]; then
+   cd "$1"
+   ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F   
+   else
+   echo "bash: cl: '$1': Directory not found"
+fi
+}
+
+# cd and ls & more in one
+cm() {
+if [ -d "$1" ]; then
+   cd "$1"
+   ls | more
+   else
+   echo "bash: cl: '$1': Directory not found"
+fi
+}
+
+
+#-------------------------------
+# command prompt layout & other
+#-------------------------------
+
+# prompt
+PS1='[\u@\h \W]\$ ' # Default
+
+# colored man pages
+man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
