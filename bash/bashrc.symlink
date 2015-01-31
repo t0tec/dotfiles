@@ -28,9 +28,6 @@ export EDITOR=/usr/bin/vim
 export PATH=$PATH
 export DISPLAY=:0.0
 
-# need this for keeping ssh/git working
-export $(gnome-keyring-daemon --daemonize --start)
-
 
 #-------------------------------
 # aliases
