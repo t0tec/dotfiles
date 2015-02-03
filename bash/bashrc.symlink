@@ -150,7 +150,7 @@ cm() {
 
 # search history of typed commands
 hs() {
-  hist='fc -l 1 55000 | grep '
+  fc -l 1 ${HISTSIZE} | grep "$1"
 }
 
 #-------------------------------
