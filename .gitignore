@@ -10,6 +10,7 @@ intellij/IntelliJIdea14.symlink/config/options/feature.usage.statistics.xml
 intellij/IntelliJIdea14.symlink/config/options/find.recents.xml
 intellij/IntelliJIdea14.symlink/config/options/gemmanager.xml
 intellij/IntelliJIdea14.symlink/config/options/javarebel.xml
+intellij/IntelliJIdea14.symlink/config/options/ide.general.xml
 intellij/IntelliJIdea14.symlink/config/options/jdk.table.xml
 intellij/IntelliJIdea14.symlink/config/options/keymap.xml
 intellij/IntelliJIdea14.symlink/config/options/options.xml
@@ -17,6 +18,7 @@ intellij/IntelliJIdea14.symlink/config/options/other.xml
 intellij/IntelliJIdea14.symlink/config/options/packages.xml
 intellij/IntelliJIdea14.symlink/config/options/path.macros.xml
 intellij/IntelliJIdea14.symlink/config/options/project.default.xml
+intellij/IntelliJIdea14.symlink/config/options/find.xml
 intellij/IntelliJIdea14.symlink/config/options/recentProjects.xml
 intellij/IntelliJIdea14.symlink/config/options/runner.layout.xml
 intellij/IntelliJIdea14.symlink/config/options/security.xml
