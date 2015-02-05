@@ -2,7 +2,7 @@
 # even though I've installed the external bash-completion package
 # the internal bash_completion should remain
 if [ -f /etc/bash_completion ]; then
-	    . /etc/bash_completion
+  . /etc/bash_completion
 fi
 
 xhost +local:root > /dev/null 2>&1 # sudo & X magic 
