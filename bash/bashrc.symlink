@@ -60,7 +60,7 @@ alias pkglist="comm -13 <(pacman -Qmq | sort) <(pacman -Qqe | sort) > pkglist"
 # runs the allservers.sh script, ranking mirrors & syncing databases
 # & bringing up a menu with options to upgrade system only or upgrade 
 # both system & AUR packages:
-alias as="sudo sh ~/.dotfiles/system/allserver.sh"
+alias as="sh ~/.dotfiles/system/allserver.sh"
 
 # quick call for vim & major conf files:
 alias rc.conf="sudo vim /etc/rc.conf"

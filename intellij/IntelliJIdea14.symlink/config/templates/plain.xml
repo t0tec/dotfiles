@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <templateSet group="plain">
   <template name="thr" value="throw new " description="throw new" toReformat="false" toShortenFQNames="true">
     <context />
   </template>
 </templateSet>
-

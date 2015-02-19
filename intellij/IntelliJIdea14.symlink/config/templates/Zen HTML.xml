@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <templateSet group="Zen HTML">
   <template name="c" value="&lt;!-- $END$ --&gt;" description="&lt;!-- --&gt;" toReformat="true" toShortenFQNames="true">
     <context />
@@ -8,4 +7,3 @@
     <context />
   </template>
 </templateSet>
-
