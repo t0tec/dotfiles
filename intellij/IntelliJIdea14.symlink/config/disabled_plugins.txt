@@ -12,3 +12,4 @@ DevKit
 OpenShift
 CloudBees
 CVS
+com.thoughtworks.gauge

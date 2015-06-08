@@ -1,0 +1,17 @@
+<application>
+  <component name="DslActivationStatus">
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/standardDsls/listenerList.gdsl" status="Modified" />
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Grails/lib/standardDsls/GrailsStandardDSL.gdsl" status="Modified" />
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/standardDsls/extensions.gdsl" status="Modified" />
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/standardDsls/defaultMethods.gdsl" status="Modified" />
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/standardDsls/indexedProperty.gdsl" status="Modified" />
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/standardDsls/newifyTransform.gdsl" status="Modified" />
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/standardDsls/categoryTransform.gdsl" status="Modified" />
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/standardDsls/metaDsl.gdsl" status="Modified" />
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/standardDsls/closuresInMethod.gdsl" status="Modified" />
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/standardDsls/bindableTransform.gdsl" status="Modified" />
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/standardDsls/vetoableTransform.gdsl" status="Modified" />
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/standardDsls/singletonTransform.gdsl" status="Modified" />
+    <file url="file://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/standardDsls/gantScript.gdsl" status="Modified" />
+  </component>
+</application>

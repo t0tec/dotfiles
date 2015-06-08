@@ -2,11 +2,16 @@
 # set/export main environment variables
 
 # java settings
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
 # maven settings
 if [ -r /opt/maven ]; then
 	export M2_HOME=/opt/maven
+fi
+
+# gradle settings
+if [ -r /usr/share/java/gradle/ ]; then
+	export GRADLE_HOME=/usr/share/java/gradle
 fi
 
 # oracle server (11.2.0 g) settings

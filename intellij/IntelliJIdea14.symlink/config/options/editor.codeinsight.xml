@@ -5,6 +5,7 @@
   <component name="CodeInsightSettings">
     <option name="SHOW_FULL_SIGNATURES_IN_PARAMETER_INFO" value="true" />
     <option name="ADD_IMPORTS_ON_PASTE" value="1" />
+    <option name="USE_ACCESSORS_IN_EQUALS_HASHCODE" value="true" />
     <option name="HIGHLIGHT_IDENTIFIER_UNDER_CARET" value="false" />
     <option name="OPTIMIZE_IMPORTS_ON_THE_FLY" value="true" />
     <option name="ADD_UNAMBIGIOUS_IMPORTS_ON_THE_FLY" value="true" />
