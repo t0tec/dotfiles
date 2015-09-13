@@ -13,12 +13,16 @@
   <component name="FileTypeManager" version="14">
     <ignoreFiles list="*.hprof;*.pyc;*.pyo;*.rbc;*~;.DS_Store;.bundle;.git;.hg;.svn;.tox;CVS;RCS;SCCS;__pycache__;_svn;rcs;vssver.scc;vssver2.scc;" />
     <extensionMap>
-      <mapping pattern="authorized_keys" type="PLAIN_TEXT" />
+      <mapping pattern="test" type="PLAIN_TEXT" />
       <mapping pattern="id_rsa" type="PLAIN_TEXT" />
       <mapping pattern="StudentenDAO" type="PLAIN_TEXT" />
-      <mapping ext="svg" type="PLAIN_TEXT" />
+      <mapping pattern="authorized_keys" type="PLAIN_TEXT" />
+      <mapping pattern="12345" type="PLAIN_TEXT" />
+      <mapping ext="p12" type="PLAIN_TEXT" />
       <mapping ext="base64" type="PLAIN_TEXT" />
+      <mapping ext="svg" type="PLAIN_TEXT" />
       <mapping ext="key" type="PLAIN_TEXT" />
+      <mapping ext="odp" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
 </application>

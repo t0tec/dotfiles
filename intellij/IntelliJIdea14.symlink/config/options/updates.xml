@@ -10,9 +10,6 @@
       <item value="IDEA14" />
       <item value="IDEA_14_EAP" />
     </knownUpdateChannels>
-    <outdatedPlugins>
-      <item value="com.thoughtworks.gauge" />
-    </outdatedPlugins>
     <option name="LAST_BUILD_CHECKED" value="IU-139.659" />
   </component>
 </application>

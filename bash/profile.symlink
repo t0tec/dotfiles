@@ -21,11 +21,6 @@ if [ -r /usr/lib/oracle/product/11.2.0/ex ]; then
 	export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
 fi
 
-# for dotfiles bin
-if [ -r ~/.dotfiles/bin ]; then
-	export PATH=$PATH:$HOME/.dotfiles/bin
-fi
-
 # source .bashrc last, so it  will be sourced on all login shells 
 [ -r ~/.bashrc ] && source ~/.bashrc
 
