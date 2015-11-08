@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 intellij/IntelliJIdea14.symlink/config/*.key
 intellij/IntelliJIdea14.symlink/config/componentVersions/
 intellij/IntelliJIdea14.symlink/config/eval/
@@ -30,3 +31,14 @@ intellij/IntelliJIdea14.symlink/config/options/window.manager.xml
 intellij/IntelliJIdea14.symlink/config/tasks
 intellij/IntelliJIdea14.symlink/config/plugins
 intellij/IntelliJIdea14.symlink/system/
+=======
+atom.symlink/.apm
+atom.symlink/.node-gyp
+atom.symlink/.storage
+atom.symlink/compile-cache/
+atom.symlink/packages
+atom.symlink/storage
+atom.symlink/themes
+
+git/gitconfig.symlink
+>>>>>>> bd5cb8bb885a07693549e930726be239f1ed7053
