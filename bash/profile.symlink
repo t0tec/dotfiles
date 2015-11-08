@@ -1,26 +1,32 @@
 # this is sourced on login shells
 # set/export main environment variables
 
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+        # include .bashrc if it exists
+        if [ -f "$HOME/.bashrc" ]; then
+                . "$HOME/.bashrc"
+        fi
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+        PATH="$HOME/bin:$PATH"
+fi
+
 # java settings
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
 # maven settings
-if [ -r /opt/maven ]; then
-	export M2_HOME=/opt/maven
+if [ -r /usr/share/maven3 ]; then
+	export M2_HOME=/usr/share/maven3
+	export M2=$M2_HOME/bin
 fi
 
 # gradle settings
-if [ -r /usr/share/java/gradle/ ]; then
+if [ -r /usr/bin/gradle/ ]; then
 	export GRADLE_HOME=/usr/share/java/gradle
-fi
-
-# oracle server (11.2.0 g) settings
-if [ -r /usr/lib/oracle/product/11.2.0/ex ]; then
-	export ORACLE_HOME=/usr/lib/oracle/product/11.2.0/xe
-	export PATH=$ORACLE_HOME/bin:$PATH
-	export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
 fi
 
 # source .bashrc last, so it  will be sourced on all login shells 
 [ -r ~/.bashrc ] && source ~/.bashrc
-

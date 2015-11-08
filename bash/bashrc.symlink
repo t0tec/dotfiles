@@ -1,8 +1,12 @@
-# bash_completion can be used in sophisticated ways beyond my understanding
-# even though I've installed the external bash-completion package
-# the internal bash_completion should remain
-if [ -f /etc/bash_completion ]; then
-  . /etc/bash_completion
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
 fi
 
 xhost +local:root > /dev/null 2>&1 # sudo & X magic 
@@ -23,7 +27,7 @@ shopt -s nocaseglob 	# case-insensitive when performing filename expansion
 
 export HISTSIZE=100000	# sets the size of the .bash_history file
 export HISTFILESIZE=${HISTSIZE}
-export HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth # don't put duplicate lines or lines starting with space in the history.
 export EDITOR=/usr/bin/vim
 export PATH=$PATH
 export DISPLAY=:0.0
@@ -37,7 +41,6 @@ fi
 #-------------------------------
 # aliases
 #-------------------------------
-
 alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
@@ -53,46 +56,20 @@ alias grubup="sudo update-grub"
 alias src="source .bashrc"
 
 # package Management:
-alias pacup="sudo pacman -Syu"
-alias yup="yaourt -Syu --aur" 
-alias pacupsyn="sudo pacman -Syyu"
-alias pacupu="sudo pacman -Syuu"
-alias ydelete="yaourt -Rsn"
-# deletes all but the last 2 versions of installed packages in the pacman cache
-alias pcc="sudo pkgcacheclean 1"
-# creates a list of all installed packages:
-alias pkglist="comm -13 <(pacman -Qmq | sort) <(pacman -Qqe | sort) > pkglist"
-# when you have an error related to /var/lib/pacman/db.lck 
-# possible error: "Unable to lock database" you'll need to delete it
-alias dblckdelete="sudo rm /var/lib/pacman/db.lck"
-# runs the allservers.sh script, ranking mirrors & syncing databases
-# & bringing up a menu with options to upgrade system only or upgrade 
-# both system & AUR packages:
-alias as="sh ~/.dotfiles/system/allserver.sh"
 
 # quick call for vim & major conf files:
-alias rc.conf="sudo vim /etc/rc.conf"
-alias pacman.conf="sudo vim /etc/pacman.conf"
-alias menu.lst="sudo vim /boot/grub/menu.lst"
 alias fstab="sudo vim /etc/fstab"
 alias bashrc="vim ~/.bashrc"
 alias rc.local="sudo vim /etc/rc.local"		# where I can call files during the boot process
-alias xinitrc="vim ~/.xinitrc"
-alias mkinit="sudo vim /etc/mkinitcpio.conf"
-alias inittab="sudo vim /etc/inittab"
 alias hosts="sudo vim /etc/hosts"
 alias hdeny="sudo vim /etc/hosts.deny"
 alias hallow="sudo vim /etc/hosts.allow"
-alias exports="sudo vim /etc/exports"
 
 # GPU stuff:
 alias gl="glxinfo | grep -i opengl && glxgears"
 
 # CPU stuff
 alias clockspeed="watch grep \"cpu MHz\" /proc/cpuinfo"
-
-# Custom scripts:
-alias status_service="sh ~/.dotfiles/system/status_service.sh"
 
 #-------------------------------
 # functions
@@ -165,8 +142,48 @@ hs() {
 # command prompt layout & other
 #-------------------------------
 
-# prompt
-PS1='\[\033[01;32m\][\u@\h\[\033[01;36m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # colored man pages
 man() {
