@@ -1,27 +1,28 @@
 [user]
-        name 	= t0tec
-        email 	= t0tec.olmec@gmail.com
+        name    = t0tec
+        email   = t0tec.olmec@gmail.com
 [credential]
-        helper 	= cache
+        helper  = cache
 [alias]
-	lg   	= log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
-	untrack = update-index --assume-unchanged
-	track 	= update-index --no-assume-unchanged
-	count	= !git shortlog -sn
+        lg      = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
+        untrack = update-index --assume-unchanged
+        track   = update-index --no-assume-unchanged
+        count   = !git shortlog -sn
 [color]
-        diff 	= auto
-        status 	= auto
-        branch 	= auto
-        ui 	= true
+        diff    = auto
+        status  = auto
+        branch  = auto
+        ui      = true
 [core]
         excludesfile = ~/.gitignore
-        editor 	= vim
+        editor = vim
+        autocrlf = input
 [apply]
         whitespace = nowarn
 [mergetool]
         keepBackup = false
 [difftool]
-        prompt	= false
+        prompt  = false
 [help]
         autocorrect = 50
 [push]
@@ -29,4 +30,5 @@
 [hub]
         protocol = https
 [url "git@github.com:t0tec/"]
-  	insteadOf = "git://github.com/t0tec/"
+        insteadOf = "git://github.com/t0tec/"
+

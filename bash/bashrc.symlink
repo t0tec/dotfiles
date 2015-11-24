@@ -32,12 +32,6 @@ export EDITOR=/usr/bin/vim
 export PATH=$PATH
 export DISPLAY=:0.0
 
-# for dotfiles bin
-if [ -r ~/.dotfiles/bin ]; then
-  PATH=.:$PATH:$HOME/.dotfiles/bin
-  export PATH
-fi
-
 #-------------------------------
 # aliases
 #-------------------------------
