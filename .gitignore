@@ -1,7 +1,7 @@
 intellij/IntelliJIdea14.symlink/config/*.key
 intellij/IntelliJIdea14.symlink/config/componentVersions/
 intellij/IntelliJIdea14.symlink/config/eval/
-intellij/IntelliJIdea14.symlink/config/jdbc-drivers/
+intellij/IntelliJIdea14.symlink/config/consoles/
 intellij/IntelliJIdea14.symlink/config/options/appComponentVersions.xml
 intellij/IntelliJIdea14.symlink/config/options/applicationLibraries.xml
 intellij/IntelliJIdea14.symlink/config/options/browsers.xml

@@ -12,5 +12,11 @@
       <schema-pattern>test.pg_catalog test.public</schema-pattern>
       <default-schemas>test.pg_catalog test.public</default-schemas>
     </data-source>
+    <data-source name="H2 - mem:mytest@localhost" uuid="84c1acdd-6a7c-465e-829e-530e5706b0c8">
+      <secret-storage>master_key</secret-storage>
+      <user-name>sa</user-name>
+      <schema-pattern>MYTEST.PUBLIC</schema-pattern>
+      <default-schemas>MYTEST.PUBLIC</default-schemas>
+    </data-source>
   </component>
 </application>

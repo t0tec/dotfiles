@@ -21,5 +21,12 @@
       <jdbc-url>jdbc:postgresql://localhost:5432</jdbc-url>
       <libraries />
     </data-source>
+    <data-source source="LOCAL" name="H2 - mem:mytest@localhost" uuid="84c1acdd-6a7c-465e-829e-530e5706b0c8">
+      <driver-ref>h2.remote</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:tcp://localhost:9092/mem:mytest</jdbc-url>
+      <libraries />
+    </data-source>
   </component>
 </application>
