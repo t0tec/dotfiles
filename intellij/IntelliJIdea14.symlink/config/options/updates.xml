@@ -9,6 +9,7 @@
       <item value="IDEA_15_EAP" />
       <item value="IDEA_Beta" />
       <item value="IDEA_Release" />
+      <item value="IDEA15_Release" />
     </knownUpdateChannels>
     <ignoredBuildNumbers>
       <item value="141.2735" />

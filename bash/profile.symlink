@@ -35,3 +35,4 @@ fi
 
 # source .bashrc last, so it  will be sourced on all login shells 
 [ -r ~/.bashrc ] && source ~/.bashrc
+

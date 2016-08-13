@@ -1,13 +1,13 @@
 hg4idea
-PerforceDirectPlugin
-DevKit
-CloudBees
-TFS
-ClearcasePlugin
-Key promoter
-OpenShift
-com.intellij.uiDesigner
 org.jetbrains.android
+com.intellij.uiDesigner
+OpenShift
 CVS
-Subversion
+TFS
 CloudFoundry
+QAPlug - Checkstyle
+CloudBees
+PerforceDirectPlugin
+ClearcasePlugin
+Subversion
+DevKit
