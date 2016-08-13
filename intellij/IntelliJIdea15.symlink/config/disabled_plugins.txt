@@ -1,0 +1,12 @@
+com.intellij.uiDesigner
+DevKit
+PerforceDirectPlugin
+hg4idea
+Subversion
+TFS
+CVS
+org.jetbrains.android
+CloudFoundry
+OpenShift
+CloudBees
+ClearcasePlugin

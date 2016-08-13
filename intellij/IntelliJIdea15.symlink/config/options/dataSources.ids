@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="51879410-5d3d-4cfd-90c9-9524d2bd9b8f">
+    <database-info product="MySQL" version="5.5.46-0ubuntu0.14.04.2" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+  </data-source>
+  <data-source name="PostgreSQL - @localhost" uuid="8b04d1b2-b618-451b-ac9a-30ab20e7c1bf">
+    <database-info product="PostgreSQL" version="9.3.10" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+  </data-source>
+  <data-source name="H2 - mem:mytest@localhost" uuid="84c1acdd-6a7c-465e-829e-530e5706b0c8">
+    <database-info product="H2" version="1.4.191 (2016-01-21)" jdbc-version="4.0" driver-name="H2 JDBC Driver" driver-version="1.4.191 (2016-01-21)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="PUBLIC" catalog="MYTEST"/>
+  </data-source>
+</component>
