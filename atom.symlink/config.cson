@@ -1,4 +1,6 @@
 "*":
+  core:
+    telemetryConsent: "no"
+  editor: {}
   welcome:
     showOnStartup: false
-  editor: {}
