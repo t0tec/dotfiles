@@ -30,5 +30,4 @@
 [hub]
         protocol = https
 [url "git@github.com:t0tec/"]
-        insteadOf = "git://github.com/t0tec/"
-
+        insteadOf = "git://github.com/t0tec/"        

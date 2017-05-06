@@ -29,5 +29,15 @@ if expr "${OUT}" : "[0-9]\+" >/dev/null; then
 	exit 1
 fi
 
+<<<<<<< HEAD
 echo "${OUT}"
 which xclip >/dev/null && echo "${OUT}" | xclip -selection clipboard
+=======
+output = `curl -i https://git.io -F 'url=#{url}' #{code} 2> /dev/null`
+if output =~ /Location: (.+)\n?/
+  puts $1
+  `echo #$1 | pbcopy`
+else
+  puts output
+end
+>>>>>>> upstream/master
