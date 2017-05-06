@@ -34,7 +34,7 @@
     ]
     telemetryConsent: "no"
   editor:
-    fontFamily: "Menlo"
+    fontFamily: "Inconsolata, Monaco, Consolas, 'Courier New', Courier;"
     fontSize: 15
     invisibles: {}
     showIndentGuide: true
@@ -62,4 +62,3 @@
 ".js.jsx.react.source":
   editor:
     autoIndent: true
-
