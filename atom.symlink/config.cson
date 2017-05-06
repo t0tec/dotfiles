@@ -1,3 +1,4 @@
 "*":
   welcome:
     showOnStartup: false
+  editor: {}

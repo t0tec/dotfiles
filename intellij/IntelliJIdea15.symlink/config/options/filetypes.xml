@@ -17,6 +17,7 @@
       <mapping pattern="authorized_keys" type="PLAIN_TEXT" />
       <mapping pattern="StudentenDAO" type="PLAIN_TEXT" />
       <mapping pattern="12345" type="PLAIN_TEXT" />
+      <mapping pattern="install_ojdbc" type="PLAIN_TEXT" />
       <mapping ext="db" type="PLAIN_TEXT" />
       <mapping ext="odp" type="PLAIN_TEXT" />
       <mapping ext="keystore" type="PLAIN_TEXT" />

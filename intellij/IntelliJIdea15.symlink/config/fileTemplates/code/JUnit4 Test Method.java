@@ -3,6 +3,6 @@
  * @throws Exception If fails
  */
 @org.junit.Test
-public void test${NAME}() throws Exception {
+public void ${NAME}() throws Exception {
   ${BODY}
 }

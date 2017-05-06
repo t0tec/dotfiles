@@ -15,6 +15,10 @@
       <item value="141.2735" />
       <item value="141.3056" />
     </ignoredBuildNumbers>
+    <outdatedPlugins>
+      <item value="mobi.hsz.idea.gitignore" />
+      <item value="de.netnexus.camelcaseplugin" />
+    </outdatedPlugins>
     <option name="LAST_TIME_CHECKED" value="1449319324543" />
     <option name="LAST_BUILD_CHECKED" value="IU-141.1532" />
   </component>
