@@ -1,4 +1,4 @@
-does dotfiles thanks to [Zach Holman](https://github.com/holman)
+t0tec does dotfiles thanks to [Zach Holman](https://github.com/holman)
 
 ## dotfiles
 
@@ -39,6 +39,6 @@ symlinked without extension into `$HOME` when you run `script/bootstrap`.
 ## thanks
 - Thanks to [Zach Holman's dotfiles](https://github.com/holman/dotfiles) I have
   a solution to backup and organise my dotfiles with ease!
-  - Thanks to [btfonaine's dotfiles](https://github.com/bfontaine/Dotfiles) for
-    his `vim.sh` script
+- Thanks to [btfonaine's dotfiles](https://github.com/bfontaine/Dotfiles) for
+  his `vim.sh` script
 
